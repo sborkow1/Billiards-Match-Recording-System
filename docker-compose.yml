@@ -9,6 +9,8 @@ services:
       - ./php.ini:/usr/local/etc/php/php.ini
     depends_on:
       - db
+    networks:
+      - poolnet
   
   db:
     image: mysql:8.0
@@ -24,8 +26,25 @@ services:
     volumes:
       - db_data:/var/lib/mysql
       - ./init-db:/docker-entrypoint-initdb.d:ro
+    networks:
+      - poolnet
 
-# Maybe include phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: billiards_phpmyadmin
+    restart: always
+    depends_on:
+    - db
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: poolroot
+    ports:
+      - "8081:80"
+    networks:
+      - poolnet
 
 volumes:
   db_data:
+
+networks:
+  poolnet:
