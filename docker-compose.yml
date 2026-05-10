@@ -1,1 +1,31 @@
 services:
+  web:
+    image: php:8.2-apache
+    container_name: billiards_web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www:/var/www/html
+      - ./php.ini:/usr/local/etc/php/php.ini
+    depends_on:
+      - db
+  
+  db:
+    image: mysql:8.0
+    container_name: billiards_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: poolroot
+      MYSQL_DATABASE: Billiards
+      MYSQL_USER: pooluser
+      MYSQL_PASSWORD: poolpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init-db:/docker-entrypoint-initdb.d:ro
+
+# Maybe include phpmyadmin
+
+volumes:
+  db_data:
