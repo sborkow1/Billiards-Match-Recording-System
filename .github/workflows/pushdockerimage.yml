@@ -29,4 +29,4 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/billiards-app:latest
-            ${{ secrets.DOCKER_USERNAME }}/billiards-app:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/billiards-app:${{ github.run_number }}
