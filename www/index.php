@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Bootstrap Page</title>
+  <title>Billiards Homepage</title>
 
   <link rel="icon" href="img/favicon.ico">
 
@@ -28,7 +28,7 @@
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">MyWebsite</a>
+      <a class="navbar-brand" href="#">Billiards Website</a>
 
       <button
         class="navbar-toggler"
@@ -45,10 +45,10 @@
             <a class="nav-link active" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#">Videos</a>
           </li>
         </ul>
       </div>
@@ -64,7 +64,7 @@
 
   <!-- Main Text -->
   <section class="main-content container">
-    <h1 class="display-4">Welcome to My Website</h1>
+    <h1 class="display-4">Welcome to our website.</h1>
 
     <p class="lead mt-4">
       This is a simple Bootstrap webpage template with a navigation bar,
@@ -72,7 +72,7 @@
     </p>
 
     <button class="btn btn-primary btn-lg mt-3">
-      Learn More
+      Click Here
     </button>
   </section>
 
